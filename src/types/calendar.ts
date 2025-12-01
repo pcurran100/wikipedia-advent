@@ -7,3 +7,13 @@ export type CalendarEntry = {
   imageAlt?: string;
 };
 
+export type CalendarDoor = {
+  day: number;
+  unlocked: boolean;
+  title?: string;
+  summary?: string;
+  link?: string;
+  image?: string;
+  imageAlt?: string;
+};
+

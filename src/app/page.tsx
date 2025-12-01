@@ -1,11 +1,10 @@
 import { AdventCalendar } from "@/components/AdventCalendar";
 import { EmailSignupForm } from "@/components/EmailSignupForm";
-import data from "@/data/articles.json";
-import type { CalendarEntry } from "@/types/calendar";
-
-const articles = data as CalendarEntry[];
+import { getCalendarDoors } from "@/lib/calendar";
 
 export default function Home() {
+  const articles = getCalendarDoors();
+
   return (
     <main className="mx-auto flex min-h-screen max-w-5xl flex-col gap-10 px-4 py-16 text-twilight sm:px-6 lg:px-8">
       <header className="space-y-6 text-center">

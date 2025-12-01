@@ -1,21 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useState } from "react";
-import type { CalendarEntry } from "@/types/calendar";
+import type { CalendarDoor } from "@/types/calendar";
 
 type AdventCalendarProps = {
-  entries: CalendarEntry[];
+  entries: CalendarDoor[];
 };
-
-function getUnlockedCount() {
-  const now = new Date();
-  const isDecember = now.getMonth() === 11;
-  const isAfterSeason = isDecember && now.getDate() > 24;
-  if (isAfterSeason) return 24;
-  if (!isDecember) return 0;
-  return Math.min(now.getDate(), 24);
-}
 
 const doorBaseClass =
   "door-perspective relative w-full overflow-hidden rounded-[24px] focus:outline-none focus-visible:ring-4 focus-visible:ring-periwinkle/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent transition-transform duration-300";
@@ -72,7 +62,6 @@ export function AdventCalendar({ entries }: AdventCalendarProps) {
   );
 
   const [activeDay, setActiveDay] = useState<number | null>(null);
-  const unlockedCount = getUnlockedCount();
 
   const handleToggle = (day: number, unlocked: boolean) => {
     if (!unlocked) return;
@@ -83,7 +72,7 @@ export function AdventCalendar({ entries }: AdventCalendarProps) {
     <section aria-label="Wikipedia Advent Calendar" className="space-y-6">
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {sortedEntries.map((entry) => {
-          const isUnlocked = entry.day <= unlockedCount;
+          const isUnlocked = entry.unlocked;
           const isOpen = activeDay === entry.day;
           const doorImage = getDoorImage(entry.day);
 
@@ -96,7 +85,9 @@ export function AdventCalendar({ entries }: AdventCalendarProps) {
               aria-pressed={isOpen}
               aria-label={
                 isUnlocked
-                  ? `Open Day ${entry.day} - ${entry.title}`
+                  ? `Open Day ${entry.day}${
+                      entry.title ? ` - ${entry.title}` : ""
+                    }`
                   : `Day ${entry.day} locked`
               }
               className={`${doorBaseClass} ${
@@ -137,14 +128,20 @@ export function AdventCalendar({ entries }: AdventCalendarProps) {
                   <p className="text-xs uppercase tracking-[0.3em] text-periwinkle">
                     Day {entry.day}
                   </p>
-                  <a
-                    href={entry.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-lg font-semibold leading-snug text-twilight underline-offset-4 hover:underline"
-                  >
-                    {entry.title}
-                  </a>
+                  {isUnlocked && entry.link ? (
+                    <a
+                      href={entry.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg font-semibold leading-snug text-twilight underline-offset-4 hover:underline"
+                    >
+                      {entry.title}
+                    </a>
+                  ) : (
+                    <p className="text-sm font-semibold text-periwinkle">
+                      Opens December {entry.day}
+                    </p>
+                  )}
                 </div>
               </div>
 
