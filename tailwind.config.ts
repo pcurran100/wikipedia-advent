@@ -18,8 +18,13 @@ const config: Config = {
         pine: "#1c3f32",
       },
       fontFamily: {
-        display: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "monospace"],
+        display: [
+          "var(--font-serif)",
+          '"Times New Roman"',
+          "Georgia",
+          "serif",
+        ],
+        mono: ["ui-monospace", "SFMono-Regular", "monospace"],
       },
       boxShadow: {
         door: "0 15px 35px rgba(0, 0, 0, 0.25)",

@@ -11,7 +11,7 @@
 
 body {
   @apply min-h-screen bg-emerald-950 text-snow antialiased;
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-serif), "Times New Roman", Georgia, "Times", serif;
   background-image: radial-gradient(
       circle at 25% 25%,
       rgba(255, 255, 255, 0.04) 0,
