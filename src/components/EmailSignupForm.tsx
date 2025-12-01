@@ -16,9 +16,6 @@ export function EmailSignupForm() {
       rel="noopener noreferrer"
       aria-label="Sign up for the Wikipedia Advent Calendar newsletter"
     >
-      <label htmlFor="email" className="text-sm font-semibold tracking-wide text-twilight">
-        Get it in your inbox
-      </label>
       <input
         id="email"
         name="email_address"
@@ -34,7 +31,7 @@ export function EmailSignupForm() {
         className="rounded-xl border border-[#b7955e] bg-[#f4ead3] px-4 py-3 text-base font-semibold text-twilight transition hover:border-[#8a6a3b] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d6b88a] focus-visible:ring-offset-[#f4ead3] disabled:cursor-not-allowed disabled:opacity-60"
         disabled={!isConfigured}
       >
-        Subscribe
+        Get it in your inbox
       </button>
       <span id="signup-helper-text" className="text-xs text-twilight/70">
         {isConfigured

@@ -18,23 +18,42 @@ function getUnlockedCount() {
 }
 
 const doorBaseClass =
-  "door-perspective relative flex aspect-square w-full flex-col rounded-[26px] border border-twilight/20 text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-periwinkle/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-transform duration-300";
+  "door-perspective relative w-full overflow-hidden rounded-[24px] focus:outline-none focus-visible:ring-4 focus-visible:ring-periwinkle/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent transition-transform duration-300";
 
 const contentBaseClass =
-  "door-content relative flex h-full w-full flex-col justify-between rounded-[22px] p-4 text-twilight shadow-door transition-all duration-500";
+  "door-content door-back absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-3 rounded-[22px] p-4 text-center text-twilight shadow-door";
+
+const doorInnerClass =
+  "door-inner relative h-full w-full rounded-[24px] transition-transform duration-700 [transform-style:preserve-3d]";
 
 const doorImageSources = [
-  "/doors/Good_1.png",
-  "/doors/Good_2.png",
-  "/doors/Gemini_Generated_Image_b7w5z0b7w5z0b7w5.png",
-  "/doors/Gemini_Generated_Image_xafszbxafszbxafs.png",
-  "/doors/Gemini_Generated_Image_yq8eoxyq8eoxyq8e.png",
+  { src: "/doors/Good_1.png", width: 2816, height: 1536 },
+  { src: "/doors/Good_2.png", width: 2816, height: 1504 },
+  {
+    src: "/doors/Gemini_Generated_Image_b7w5z0b7w5z0b7w5.png",
+    width: 2816,
+    height: 1536,
+  },
+  {
+    src: "/doors/Gemini_Generated_Image_xafszbxafszbxafs.png",
+    width: 2816,
+    height: 1536,
+  },
+  {
+    src: "/doors/Gemini_Generated_Image_yq8eoxyq8eoxyq8e.png",
+    width: 2816,
+    height: 1536,
+  },
 ] as const;
 
 const quadrantPositions = ["0% 0%", "100% 0%", "0% 100%", "100% 100%"] as const;
 
-const doorImageConfigs = doorImageSources.flatMap((src) =>
-  quadrantPositions.map((position) => ({ src, position }))
+const doorImageConfigs = doorImageSources.flatMap((image) =>
+  quadrantPositions.map((position) => ({
+    src: image.src,
+    position,
+    aspectRatio: image.width / image.height,
+  }))
 );
 
 function getDoorImage(day: number) {
@@ -81,61 +100,47 @@ export function AdventCalendar({ entries }: AdventCalendarProps) {
                   ? "hover:-translate-y-1 hover:shadow-door"
                   : "cursor-not-allowed opacity-90"
               }`}
+              style={{ aspectRatio: `${doorImage.aspectRatio}` }}
             >
-              <span
-                className={`door-front absolute inset-0 rounded-[24px] p-4 text-center text-3xl font-bold text-white`}
-                style={{
-                  backgroundImage: `url(${doorImage.src})`,
-                  backgroundSize: "200% 200%",
-                  backgroundPosition: doorImage.position,
-                  backgroundRepeat: "no-repeat",
-                }}
-                data-open={isOpen}
-                data-locked={!isUnlocked}
-                aria-hidden="true"
-              >
-                <span className="text-5xl font-extrabold drop-shadow-lg">
-                  {entry.day}
-                </span>
-                <span className="mt-3 block text-sm font-semibold uppercase tracking-wide text-white/80">
-                  {isUnlocked ? "Open" : "Locked"}
-                </span>
-              </span>
-
               <div
-                className={`${contentBaseClass} ${
-                  isOpen ? "opacity-100" : "opacity-0"
+                className={`${doorInnerClass} ${
+                  isOpen ? "[transform:rotateY(180deg)]" : ""
                 } ${isUnlocked ? "pointer-events-auto" : "pointer-events-none"}`}
-                aria-hidden={!isOpen}
               >
-                <div className="space-y-2 text-twilight">
+                <div
+                  className="door-front absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-[24px] p-4 text-center text-3xl font-bold text-white [backface-visibility:hidden]"
+                  style={{
+                    backgroundImage: `url(${doorImage.src})`,
+                    backgroundSize: "200% 200%",
+                    backgroundPosition: doorImage.position,
+                    backgroundRepeat: "no-repeat",
+                  }}
+                  data-locked={!isUnlocked}
+                  aria-hidden="true"
+                >
+                  <span className="text-5xl font-extrabold drop-shadow-lg">
+                    {entry.day}
+                  </span>
+                  <span className="mt-3 block text-sm font-semibold uppercase tracking-wide text-white/80">
+                    {isUnlocked ? "Open" : "Locked"}
+                  </span>
+                </div>
+
+                <div
+                  className={`${contentBaseClass} [transform:rotateY(180deg)] [backface-visibility:hidden]`}
+                  aria-hidden={!isOpen}
+                >
                   <p className="text-xs uppercase tracking-[0.3em] text-periwinkle">
                     Day {entry.day}
                   </p>
-                  <h3 className="text-lg font-semibold leading-tight text-twilight">
-                    {entry.title}
-                  </h3>
-                  <p className="text-sm text-twilight/80">{entry.summary}</p>
-                </div>
-                <div className="flex items-center justify-between">
                   <a
                     href={entry.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-semibold text-periwinkle underline-offset-4 hover:underline"
+                    className="text-lg font-semibold leading-snug text-twilight underline-offset-4 hover:underline"
                   >
-                    Read on Wikipedia
+                    {entry.title}
                   </a>
-                  {entry.image ? (
-                    <Image
-                      src={entry.image}
-                      alt={entry.imageAlt ?? ""}
-                      width={40}
-                      height={40}
-                      className="rounded-full border border-white/20 bg-white/10 p-1"
-                      loading="lazy"
-                    />
-                  ) : null}
                 </div>
               </div>
 
