@@ -1,4 +1,7 @@
-const convertKitFormId = process.env.NEXT_PUBLIC_CONVERTKIT_FORM_ID;
+// Fall back to the production ConvertKit form when no env override is present.
+const DEFAULT_CONVERTKIT_FORM_ID = "8829354";
+const convertKitFormId =
+  process.env.NEXT_PUBLIC_CONVERTKIT_FORM_ID ?? DEFAULT_CONVERTKIT_FORM_ID;
 
 const actionUrl = convertKitFormId
   ? `https://app.convertkit.com/forms/${convertKitFormId}/subscriptions`
