@@ -19,10 +19,10 @@ function getUnlockedCount(showArchive: boolean) {
 }
 
 const doorBaseClass =
-  "door-perspective relative flex h-48 w-full flex-col rounded-[26px] border border-white/10 text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-950 transition-transform duration-300";
+  "door-perspective relative flex h-48 w-full flex-col rounded-[26px] border border-twilight/20 text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-periwinkle/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-transform duration-300";
 
 const contentBaseClass =
-  "door-content relative flex h-full w-full flex-col justify-between rounded-[22px] p-4 text-snow shadow-door transition-all duration-500";
+  "door-content relative flex h-full w-full flex-col justify-between rounded-[22px] p-4 text-twilight shadow-door transition-all duration-500";
 
 export function AdventCalendar({ entries }: AdventCalendarProps) {
   const sortedEntries = useMemo(
@@ -50,15 +50,15 @@ export function AdventCalendar({ entries }: AdventCalendarProps) {
     <section aria-label="Wikipedia Advent Calendar" className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-gold">
+          <p className="text-xs uppercase tracking-[0.2em] text-periwinkle">
             Advent Calendar · {unlockedCount}/24 unlocked
           </p>
-          <p className="text-sm text-snow/80">{dailyMessage}</p>
+          <p className="text-sm text-twilight/80">{dailyMessage}</p>
         </div>
         <button
           type="button"
           onClick={() => setShowArchive((prev) => !prev)}
-          className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:border-gold hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          className="rounded-full border border-twilight/30 bg-white/70 px-4 py-2 text-sm font-semibold text-twilight transition hover:border-periwinkle hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-periwinkle"
           aria-pressed={showArchive}
         >
           {showArchive ? "Hide archive" : "Preview entire calendar"}
@@ -108,21 +108,21 @@ export function AdventCalendar({ entries }: AdventCalendarProps) {
                 } ${isUnlocked ? "pointer-events-auto" : "pointer-events-none"}`}
                 aria-hidden={!isOpen}
               >
-                <div className="space-y-2">
-                  <p className="text-xs uppercase tracking-[0.3em] text-gold">
+                <div className="space-y-2 text-twilight">
+                  <p className="text-xs uppercase tracking-[0.3em] text-periwinkle">
                     Day {entry.day}
                   </p>
-                  <h3 className="text-lg font-semibold leading-tight text-white">
+                  <h3 className="text-lg font-semibold leading-tight text-twilight">
                     {entry.title}
                   </h3>
-                  <p className="text-sm text-snow/80">{entry.summary}</p>
+                  <p className="text-sm text-twilight/80">{entry.summary}</p>
                 </div>
                 <div className="flex items-center justify-between">
                   <a
                     href={entry.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-semibold text-gold underline-offset-4 hover:underline"
+                    className="text-sm font-semibold text-periwinkle underline-offset-4 hover:underline"
                   >
                     Read on Wikipedia
                   </a>

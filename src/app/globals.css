@@ -3,23 +3,49 @@
 @tailwind utilities;
 
 :root {
-  color: #f8fafc;
-  background-color: #0f2b24;
+  color: #3b2a6f;
+  background-color: #f4ead3;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
+html {
+  background-color: #f4ead3;
+}
+
 body {
-  @apply min-h-screen bg-emerald-950 text-snow antialiased;
+  @apply min-h-screen text-pine antialiased;
   font-family: var(--font-serif), "Times New Roman", Georgia, "Times", serif;
+  color: #3b2a6f;
+  background: transparent;
+  box-shadow: inset 0 0 110px rgba(0, 0, 0, 0.08);
+  position: relative;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: #f4ead3;
   background-image: radial-gradient(
-      circle at 25% 25%,
-      rgba(255, 255, 255, 0.04) 0,
-      rgba(255, 255, 255, 0) 50%
+      circle at 18% 20%,
+      rgba(255, 255, 255, 0.55),
+      rgba(255, 255, 255, 0) 45%
     ),
-    url("/images/snowfall.svg");
-  background-size: 400px 400px, cover;
-  background-attachment: fixed;
+    radial-gradient(
+      circle at 82% 0%,
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0) 40%
+    ),
+    linear-gradient(180deg, rgba(250, 243, 224, 0.95), rgba(226, 204, 168, 0.95)),
+    url("/images/paper-grain.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  background-size: 160% 160%, 180% 180%, 100% 100%, 900px 900px;
+  background-blend-mode: screen, screen, multiply, normal;
+  filter: saturate(0.95);
+  pointer-events: none;
 }
 
 .door-perspective {
@@ -45,11 +71,13 @@ body {
 }
 
 .door-content {
-  background: linear-gradient(160deg, #133a2d, #0f2b24 65%, #0b1f19);
+  background: linear-gradient(160deg, #fdf8ec, #f0e4c6 65%, #e2d1b0);
+  color: #3b2a6f;
 }
 
 .frosted-card {
   backdrop-filter: blur(10px);
-  background-color: rgba(15, 43, 36, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(59, 42, 111, 0.12);
+  color: #3b2a6f;
 }

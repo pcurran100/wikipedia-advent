@@ -16,6 +16,8 @@ const config: Config = {
         gold: "#f5d38c",
         snow: "#f8fafc",
         pine: "#1c3f32",
+        twilight: "#3b2a6f",
+        periwinkle: "#9184ff",
       },
       fontFamily: {
         display: [

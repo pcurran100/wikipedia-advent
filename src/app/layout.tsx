@@ -64,7 +64,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} bg-emerald-950 antialiased`}>
+      <body className={`${playfair.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -7,7 +7,7 @@ const articles = data as CalendarEntry[];
 
 export default function Home() {
   return (
-    <div className="relative isolate min-h-screen bg-gradient-to-b from-emerald-950 via-pine to-emerald-900 text-white">
+    <div className="relative isolate min-h-screen bg-transparent text-twilight">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/20 to-transparent"
         aria-hidden="true"
@@ -17,10 +17,10 @@ export default function Home() {
           <p className="text-sm uppercase tracking-[0.5em] text-gold">
             Wikipedia Advent Calendar
           </p>
-          <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+          <h1 className="text-4xl font-semibold leading-tight text-twilight sm:text-5xl">
             24 days of curious Christmas lore in your inbox.
           </h1>
-          <p className="text-lg text-snow/80">
+          <p className="text-lg text-twilight/80">
             Countdown to Christmas with handpicked Wikipedia articles—traditions,
             songs, food, legends, and deep dives researched so you don’t have to.
             Each door unlocks at midnight in your local time zone.
@@ -28,28 +28,28 @@ export default function Home() {
 
           <div className="frosted-card space-y-4 rounded-3xl p-5">
             <div className="flex items-center gap-3">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 text-lg font-bold text-gold">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/70 text-lg font-bold text-twilight">
                 01
               </span>
-              <p className="text-base text-snow/90">
+              <p className="text-base text-twilight/80">
                 Tap into nerdy gift ideas—link to the live article the moment it
                 unlocks.
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 text-lg font-bold text-gold">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/70 text-lg font-bold text-twilight">
                 02
               </span>
-              <p className="text-base text-snow/90">
+              <p className="text-base text-twilight/80">
                 Responsive Advent grid with door animations and accessibility
                 baked in.
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 text-lg font-bold text-gold">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/70 text-lg font-bold text-twilight">
                 03
               </span>
-              <p className="text-base text-snow/90">
+              <p className="text-base text-twilight/80">
                 ConvertKit signup form to deliver the newsletter through your
                 existing list.
               </p>
