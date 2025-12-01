@@ -29,6 +29,10 @@ const doorInnerClass =
 const doorImageSources = [
   { src: "/doors/Good_1.png", width: 2816, height: 1536 },
   { src: "/doors/Good_2.png", width: 2816, height: 1504 },
+  { src: "/doors/Good_5.png", width: 2816, height: 1504 },
+  { src: "/doors/Good_6.png", width: 2816, height: 1504 },
+  { src: "/doors/Okay_3.png", width: 2816, height: 1504 },
+  { src: "/doors/Okay_4.png", width: 2816, height: 1504 },
   {
     src: "/doors/Gemini_Generated_Image_b7w5z0b7w5z0b7w5.png",
     width: 2816,
