@@ -20,12 +20,7 @@ const config: Config = {
         periwinkle: "#9184ff",
       },
       fontFamily: {
-        display: [
-          "var(--font-serif)",
-          '"Times New Roman"',
-          "Georgia",
-          "serif",
-        ],
+        display: ['"Times New Roman"', "Georgia", '"Times"', "serif"],
         mono: ["ui-monospace", "SFMono-Regular", "monospace"],
       },
       boxShadow: {

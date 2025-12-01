@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display } from "next/font/google";
 import "./globals.css";
-
-const playfair = Playfair_Display({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 const siteUrl = "https://wiki-advent-calendar.vercel.app";
 
@@ -64,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} antialiased`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>

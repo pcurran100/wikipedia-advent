@@ -8,8 +8,7 @@ type AdventCalendarProps = {
   entries: CalendarEntry[];
 };
 
-function getUnlockedCount(showArchive: boolean) {
-  if (showArchive) return 24;
+function getUnlockedCount() {
   const now = new Date();
   const isDecember = now.getMonth() === 11;
   const isAfterSeason = isDecember && now.getDate() > 24;
@@ -31,15 +30,7 @@ export function AdventCalendar({ entries }: AdventCalendarProps) {
   );
 
   const [activeDay, setActiveDay] = useState<number | null>(null);
-  const [showArchive, setShowArchive] = useState(false);
-  const unlockedCount = getUnlockedCount(showArchive);
-
-  const dailyMessage =
-    unlockedCount === 0 && !showArchive
-      ? "Doors unlock daily starting December 1 in your time zone."
-      : unlockedCount < 24
-        ? `Unlocked through Day ${unlockedCount}. Come back tomorrow for the next article!`
-        : "All doors are open—feel free to revisit your favorites.";
+  const unlockedCount = getUnlockedCount();
 
   const handleToggle = (day: number, unlocked: boolean) => {
     if (!unlocked) return;
@@ -48,23 +39,6 @@ export function AdventCalendar({ entries }: AdventCalendarProps) {
 
   return (
     <section aria-label="Wikipedia Advent Calendar" className="space-y-6">
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-periwinkle">
-            Advent Calendar · {unlockedCount}/24 unlocked
-          </p>
-          <p className="text-sm text-twilight/80">{dailyMessage}</p>
-        </div>
-        <button
-          type="button"
-          onClick={() => setShowArchive((prev) => !prev)}
-          className="rounded-full border border-twilight/30 bg-white/70 px-4 py-2 text-sm font-semibold text-twilight transition hover:border-periwinkle hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-periwinkle"
-          aria-pressed={showArchive}
-        >
-          {showArchive ? "Hide archive" : "Preview entire calendar"}
-        </button>
-      </div>
-
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {sortedEntries.map((entry) => {
           const isUnlocked = entry.day <= unlockedCount;
