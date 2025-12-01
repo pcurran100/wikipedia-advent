@@ -67,7 +67,6 @@ body::before {
   justify-content: center;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(73, 55, 36, 0.45);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -75,6 +74,16 @@ body::before {
   color: #fefaf1;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
   overflow: hidden;
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .door-front::after {

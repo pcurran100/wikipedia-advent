@@ -21,7 +21,7 @@ export function EmailSignupForm() {
         name="email_address"
         type="email"
         required
-        placeholder="you@email.com"
+        placeholder="Your email"
         className="w-full rounded-xl border border-[#b7955e] bg-[#f4ead3] px-4 py-3 text-base text-twilight placeholder:text-twilight/60 focus:border-[#8a6a3b] focus:outline-none focus:ring-2 focus:ring-[#d6b88a]/60"
         aria-describedby="signup-helper-text"
         disabled={!isConfigured}
