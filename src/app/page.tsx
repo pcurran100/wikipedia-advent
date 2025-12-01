@@ -20,6 +20,7 @@ export default function Home() {
       <section className="flex-1">
         <AdventCalendar entries={articles} />
       </section>
+
     </main>
   );
 }

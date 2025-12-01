@@ -34,9 +34,15 @@ export function EmailSignupForm() {
         Get it in your inbox
       </button>
       <span id="signup-helper-text" className="text-xs text-twilight/70">
-        {isConfigured
-          ? "Powered by ConvertKit · unsubscribe anytime."
-          : "Add NEXT_PUBLIC_CONVERTKIT_FORM_ID to enable the live form."}
+        By signing up you agree to our{" "}
+        <a href="/privacy-policy" className="underline-offset-2 hover:underline">
+          Privacy Policy
+        </a>{" "}
+        and{" "}
+        <a href="/terms" className="underline-offset-2 hover:underline">
+          Terms &amp; Conditions
+        </a>
+        . Powered by ConvertKit · unsubscribe anytime.
       </span>
     </form>
   );
