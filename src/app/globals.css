@@ -63,8 +63,31 @@ body::before {
   transform-style: preserve-3d;
   transform-origin: left;
   transition: transform 0.7s ease, box-shadow 0.3s ease;
-  background: linear-gradient(145deg, #b80d34, #d62544);
-  border: 2px solid rgba(255, 255, 255, 0.35);
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(73, 55, 36, 0.45);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25);
+  color: #fefaf1;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.door-front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.35), rgba(34, 24, 16, 0.35));
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.door-front > * {
+  position: relative;
+  z-index: 1;
 }
 
 .door-front[data-open="true"] {
@@ -73,8 +96,8 @@ body::before {
 }
 
 .door-front[data-locked="true"] {
-  filter: grayscale(0.2) saturate(0.7);
-  opacity: 0.75;
+  filter: saturate(0.6) brightness(0.85);
+  opacity: 0.8;
 }
 
 .door-content {

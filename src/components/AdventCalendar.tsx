@@ -18,10 +18,29 @@ function getUnlockedCount() {
 }
 
 const doorBaseClass =
-  "door-perspective relative flex h-48 w-full flex-col rounded-[26px] border border-twilight/20 text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-periwinkle/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-transform duration-300";
+  "door-perspective relative flex aspect-square w-full flex-col rounded-[26px] border border-twilight/20 text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-periwinkle/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-transform duration-300";
 
 const contentBaseClass =
   "door-content relative flex h-full w-full flex-col justify-between rounded-[22px] p-4 text-twilight shadow-door transition-all duration-500";
+
+const doorImageSources = [
+  "/doors/Good_1.png",
+  "/doors/Good_2.png",
+  "/doors/Gemini_Generated_Image_b7w5z0b7w5z0b7w5.png",
+  "/doors/Gemini_Generated_Image_xafszbxafszbxafs.png",
+  "/doors/Gemini_Generated_Image_yq8eoxyq8eoxyq8e.png",
+] as const;
+
+const quadrantPositions = ["0% 0%", "100% 0%", "0% 100%", "100% 100%"] as const;
+
+const doorImageConfigs = doorImageSources.flatMap((src) =>
+  quadrantPositions.map((position) => ({ src, position }))
+);
+
+function getDoorImage(day: number) {
+  const index = (day - 1) % doorImageConfigs.length;
+  return doorImageConfigs[index];
+}
 
 export function AdventCalendar({ entries }: AdventCalendarProps) {
   const sortedEntries = useMemo(
@@ -43,6 +62,7 @@ export function AdventCalendar({ entries }: AdventCalendarProps) {
         {sortedEntries.map((entry) => {
           const isUnlocked = entry.day <= unlockedCount;
           const isOpen = activeDay === entry.day;
+          const doorImage = getDoorImage(entry.day);
 
           return (
             <button
@@ -64,6 +84,12 @@ export function AdventCalendar({ entries }: AdventCalendarProps) {
             >
               <span
                 className={`door-front absolute inset-0 rounded-[24px] p-4 text-center text-3xl font-bold text-white`}
+                style={{
+                  backgroundImage: `url(${doorImage.src})`,
+                  backgroundSize: "200% 200%",
+                  backgroundPosition: doorImage.position,
+                  backgroundRepeat: "no-repeat",
+                }}
                 data-open={isOpen}
                 data-locked={!isUnlocked}
                 aria-hidden="true"
