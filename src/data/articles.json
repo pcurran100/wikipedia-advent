@@ -1,0 +1,159 @@
+[
+  {
+    "day": 1,
+    "title": "Advent",
+    "summary": "Discover how Christian communities have marked the four weeks leading up to Christmas with prayer, fasting, and bright Advent wreaths.",
+    "link": "https://en.wikipedia.org/wiki/Advent",
+    "image": "/images/candles.svg",
+    "imageAlt": "Two red Advent candles"
+  },
+  {
+    "day": 2,
+    "title": "Nativity of Jesus",
+    "summary": "Explore the Gospel narratives describing the birth of Jesus in Bethlehem and the symbols that surround manger scenes worldwide.",
+    "link": "https://en.wikipedia.org/wiki/Nativity_of_Jesus"
+  },
+  {
+    "day": 3,
+    "title": "Saint Nicholas",
+    "summary": "Meet the charitable 4th‑century bishop whose secret gift‑giving inspired Santa Claus traditions across Europe.",
+    "link": "https://en.wikipedia.org/wiki/Saint_Nicholas",
+    "image": "/images/gift.svg",
+    "imageAlt": "Simple illustration of a wrapped gift"
+  },
+  {
+    "day": 4,
+    "title": "Christmas Tree",
+    "summary": "Trace the evergreen tree from medieval mystery plays to living rooms covered in tinsel, glass ornaments, and LEDs.",
+    "link": "https://en.wikipedia.org/wiki/Christmas_tree",
+    "image": "/images/tree.svg",
+    "imageAlt": "Stylized evergreen tree"
+  },
+  {
+    "day": 5,
+    "title": "Bethlehem",
+    "summary": "Learn about the West Bank city revered as the traditional site of the Nativity and its enduring pilgrimage routes.",
+    "link": "https://en.wikipedia.org/wiki/Bethlehem"
+  },
+  {
+    "day": 6,
+    "title": "Krampus",
+    "summary": "Peek at the horned Alpine folkloric figure who punishes the naughty in contrast to Saint Nicholas rewards.",
+    "link": "https://en.wikipedia.org/wiki/Krampus"
+  },
+  {
+    "day": 7,
+    "title": "Yule Goat",
+    "summary": "Follow the Scandinavian straw goat that once frightened children but now decorates Nordic towns and homes.",
+    "link": "https://en.wikipedia.org/wiki/Yule_Goat",
+    "image": "/images/goat.svg",
+    "imageAlt": "Straw goat ornament"
+  },
+  {
+    "day": 8,
+    "title": "Christmas Market",
+    "summary": "Stroll through festive European squares filled with mulled wine, gingerbread, carved toys, and choirs.",
+    "link": "https://en.wikipedia.org/wiki/Christmas_market"
+  },
+  {
+    "day": 9,
+    "title": "Poinsettia",
+    "summary": "Find out how a Mexican winter bloom became a greenhouse staple that paints December red and gold.",
+    "link": "https://en.wikipedia.org/wiki/Poinsettia"
+  },
+  {
+    "day": 10,
+    "title": "Twelve Days of Christmas",
+    "summary": "Unpack the accumulative carol, its disputed symbolism, and how it inspired endless parodies.",
+    "link": "https://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)"
+  },
+  {
+    "day": 11,
+    "title": "Weihnachtsmann",
+    "summary": "Compare Germany’s secular gift‑bringer, evolved from Saint Nicholas yet distinct from North American Santa.",
+    "link": "https://en.wikipedia.org/wiki/Weihnachtsmann"
+  },
+  {
+    "day": 12,
+    "title": "Wassailing",
+    "summary": "Toast to good cider harvests and door‑to‑door singing traditions that predate modern caroling.",
+    "link": "https://en.wikipedia.org/wiki/Wassailing"
+  },
+  {
+    "day": 13,
+    "title": "St. Lucy's Day",
+    "summary": "Witness Swedish processions led by candle‑crowned Lucias bringing saffron buns to banish winter darkness.",
+    "link": "https://en.wikipedia.org/wiki/Saint_Lucy's_Day"
+  },
+  {
+    "day": 14,
+    "title": "The Nutcracker",
+    "summary": "Dive into Tchaikovsky’s ballet, its fairy‑tale origins, and how it conquered holiday stages.",
+    "link": "https://en.wikipedia.org/wiki/The_Nutcracker"
+  },
+  {
+    "day": 15,
+    "title": "Christmas Truce of 1914",
+    "summary": "Read about the unofficial World War I ceasefires when enemies shared carols, gifts, and soccer matches.",
+    "link": "https://en.wikipedia.org/wiki/Christmas_truce"
+  },
+  {
+    "day": 16,
+    "title": "Las Posadas",
+    "summary": "Join nine nights of candlelit processions reenacting Mary and Joseph’s search for shelter across Latin America.",
+    "link": "https://en.wikipedia.org/wiki/Las_Posadas"
+  },
+  {
+    "day": 17,
+    "title": "Candy Cane",
+    "summary": "Follow the striped sugar stick from German choirs to mass production and peppermint everything.",
+    "link": "https://en.wikipedia.org/wiki/Candy_cane",
+    "image": "/images/cane.svg",
+    "imageAlt": "Striped candy cane"
+  },
+  {
+    "day": 18,
+    "title": "Hanukkah",
+    "summary": "Understand the Festival of Lights, menorahs, dreidels, and why its date shifts on the Gregorian calendar.",
+    "link": "https://en.wikipedia.org/wiki/Hanukkah"
+  },
+  {
+    "day": 19,
+    "title": "Jólabókaflóðið",
+    "summary": "Cozy up with Iceland’s \"Christmas Book Flood,\" where gifting novels fuels an entire publishing season.",
+    "link": "https://en.wikipedia.org/wiki/J%C3%B3lab%C3%B3kafl%C3%B3%C3%B0"
+  },
+  {
+    "day": 20,
+    "title": "Christmas Pickle",
+    "summary": "Investigate the quirky ornament hidden on trees so the keenest eye wins an extra present.",
+    "link": "https://en.wikipedia.org/wiki/Christmas_pickles",
+    "image": "/images/ornament.svg",
+    "imageAlt": "Glass ornament illustration"
+  },
+  {
+    "day": 21,
+    "title": "Panettone",
+    "summary": "Taste the airy Milanese sweet bread that now travels worldwide in iconic dome‑shaped tins.",
+    "link": "https://en.wikipedia.org/wiki/Panettone"
+  },
+  {
+    "day": 22,
+    "title": "Little Drummer Boy",
+    "summary": "Follow the mid‑20th century carol from Katherine K. Davis’ composition to countless covers and stop‑motion fame.",
+    "link": "https://en.wikipedia.org/wiki/The_Little_Drummer_Boy"
+  },
+  {
+    "day": 23,
+    "title": "Feast of the Seven Fishes",
+    "summary": "Feast on Italian American Vigil suppers packed with regional seafood favorites on Christmas Eve.",
+    "link": "https://en.wikipedia.org/wiki/Feast_of_the_Seven_Fishes"
+  },
+  {
+    "day": 24,
+    "title": "Midnight Mass",
+    "summary": "Arrive at candlelit services welcoming Christmas Day across cathedrals and neighborhood parishes alike.",
+    "link": "https://en.wikipedia.org/wiki/Midnight_Mass_(Catholic_church)"
+  }
+]
+
