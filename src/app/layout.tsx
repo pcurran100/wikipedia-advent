@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const siteUrl = "https://wiki-advent-calendar.vercel.app";
+const faviconIco = "/candy-icon.ico?v=1";
+const faviconPng = "/candy-icon.png?v=1";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -43,7 +45,10 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: faviconIco },
+      { url: faviconPng, type: "image/png", sizes: "512x512" },
+    ],
   },
   alternates: {
     canonical: siteUrl,
